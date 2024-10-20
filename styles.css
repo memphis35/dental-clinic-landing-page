@@ -15,8 +15,9 @@ button:focus {
     outline: none;
 }
 
-ul {
-    list-style: none;
+a {
+    text-decoration: none;
+    color: #000;
 }
 
 
@@ -36,16 +37,16 @@ body {
     text-transform: uppercase;
     font-size: 20px;
     padding: 20px 50px;
-    border: 2px solid #ff4500;
+    border: 2px solid #ff6d38;
     border-radius: 5px;
     max-width: min-content;
-    color: #ff4500;
+    color: #ff6d38;
     white-space: nowrap;
     transition: all 0.5s;
 }
 
 .button:hover, .button:focus {
-    background-color: #ff4500;
+    background-color: #ff6d38;
     color: #fff;
     cursor: pointer;
 }
@@ -71,6 +72,21 @@ body {
     100% {
         opacity: 1;
         transform: translateX(0);
+    }
+}
+
+@keyframes fade-in-zoom-in {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    75% {
+        opacity: 0.75;
+        transform: scale(1.1);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
     }
 }
 
@@ -116,6 +132,7 @@ body {
 .contacts {
     display: flex;
     align-items: center;
+    margin-bottom: 50px;
 }
 
 .contacts__frame {
@@ -123,7 +140,7 @@ body {
     flex-direction: column;
     align-items: center;
     width: 50vw;
-    animation: slide-from-left 2s;
+    /* animation: slide-from-left 2s; */
 }
 
 .contacts__title {
@@ -148,12 +165,75 @@ body {
 }
 
 .contacts__img-welcome {
-    height: 500px;
+    height: 600px;
     width: 50vw;
     object-fit: cover;
     object-position: 0%;
     justify-self: end;
     border-radius: 400px 0 0 400px;
     margin-left: auto;
-    animation: slide-from-right 2s;
+    /* animation: slide-from-right 2s; */
+}
+
+/* ---------- SERVICES STYLES ---------- */
+
+.services {
+    max-width: 1140px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.services__service {
+    background-color: #ff6d38;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 20px;
+    padding: 30px;
+    width: 23%;
+    border-radius: 10px;
+    animation: fade-in-zoom-in 0.3s;
+    animation-fill-mode: backwards;
+}
+
+.services__service:nth-of-type(2) {
+    animation-delay: 0.3s;
+}
+
+.services__service:nth-of-type(3) {
+    animation-delay: 0.6s;
+}
+
+.services__service:nth-of-type(4) {
+    animation-delay: 0.9s;
+}
+
+.services__service-icon {
+    font-size: 60px;
+}
+
+.services__service-title {
+    text-transform: uppercase;
+}
+
+.services__service-description {
+    text-align: justify;
+    height: 100px;
+}
+
+.services__service-more {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    padding-bottom: 3px;
+    color: #fff;
+    border-bottom: 2px solid #fff;
+    transition: all 0.5s;
+}
+
+.services__service-more:hover, .services__service-more:focus {
+    color: #bbb;
+    border-bottom-color: #bbb;
 }
