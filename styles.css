@@ -2,8 +2,7 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: Agdasima, sans-serif;
-    font-weight: 400;
+    box-sizing: border-box;
 }
 
 button {
@@ -16,17 +15,70 @@ button:focus {
     outline: none;
 }
 
+ul {
+    list-style: none;
+}
+
 
 /* ---------- GLOBAL STYLES ---------- */
+* {
+    font-family: Roboto, sans-serif;
+    font-weight: 400;
+}
+
 body {
-    width: 1140px;
+    width: 100wv;
     height: 100hv;
     margin: 0 auto;
 }
 
+.button {
+    text-transform: uppercase;
+    font-size: 20px;
+    padding: 20px 50px;
+    border: 2px solid #ff4500;
+    border-radius: 5px;
+    max-width: min-content;
+    color: #ff4500;
+    white-space: nowrap;
+    transition: all 0.5s;
+}
+
+.button:hover, .button:focus {
+    background-color: #ff4500;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* ---------- KEYFRAMES ---------- */
+
+@keyframes slide-from-left {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slide-from-right {
+    0% {
+        opacity: 0;
+        transform: translateX(+100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
 /* ---------- HEADER STYLES ---------- */
 .header {
-    margin-top: 25px;
+    max-width: 1140px;
+    padding: 0 20px;
+    margin: 25px auto 65px auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -57,4 +109,51 @@ body {
     color: #555;
     cursor: pointer;
     transform: scale(1.2);
+}
+
+/* ---------- CONTACTS STYLES ---------- */
+
+.contacts {
+    display: flex;
+    align-items: center;
+}
+
+.contacts__frame {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50vw;
+    animation: slide-from-left 2s;
+}
+
+.contacts__title {
+    margin-bottom: 35px;
+}
+
+.contacts__greeting {
+    text-transform: uppercase;
+}
+
+.contacts__contact {
+    margin-bottom: 10px;
+    align-self: flex-start;
+}
+
+.contacts__list {
+    margin-bottom: 50px;
+}
+
+.contacts__icon {
+    margin-right: 6px;
+}
+
+.contacts__img-welcome {
+    height: 500px;
+    width: 50vw;
+    object-fit: cover;
+    object-position: 0%;
+    justify-self: end;
+    border-radius: 400px 0 0 400px;
+    margin-left: auto;
+    animation: slide-from-right 2s;
 }
