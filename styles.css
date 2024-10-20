@@ -1,0 +1,60 @@
+/* ---------- RESET STYLES ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Agdasima, sans-serif;
+    font-weight: 400;
+}
+
+button {
+    border: none;
+    background-color: #fff;
+    /* how to remove gray background? */
+}
+
+button:focus {
+    outline: none;
+}
+
+
+/* ---------- GLOBAL STYLES ---------- */
+body {
+    width: 1140px;
+    height: 100hv;
+    margin: 0 auto;
+}
+
+/* ---------- HEADER STYLES ---------- */
+.header {
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__logo {
+    letter-spacing: 3px;
+}
+
+.header__logo-word-1 {
+    color: #888;
+}
+
+.header__logo-word-2 {
+    color: #999;
+}
+
+.header__logo-word-3 {
+    color: #aaa;
+}
+
+.header__menu-btn {
+    color: #aaa;
+    transition: all 0.5s;
+}
+
+.header__menu-btn:hover, .header__menu-btn:focus {
+    color: #555;
+    cursor: pointer;
+    transform: scale(1.2);
+}
